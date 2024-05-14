@@ -7,12 +7,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringbootFirstApplication {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		ApplicationContext cont=SpringApplication.run(SpringbootFirstApplication.class, args);
 
-		Laptops obj=cont.getBean(Laptops.class);
+		LaptopsService service=cont.getBean(LaptopsService.class);
 
-		obj.exec();
+		Laptops lap=cont.getBean(Laptops.class);	
+
+		service.addLaptops(lap);
 	}
 
 }
